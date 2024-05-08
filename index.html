@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>active class</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .conteaner {
+            display: inline-block;
+        }
+
+        a {
+            border: none;
+            background-color: green;
+            font-size: 2rem;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .active,
+        button:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteaner">
+        <a class="active">( 1 )</a>
+        <a>( 2 )</a>
+        <a>( 3 )</a>
+        <a>( 4 )</a>
+        <a>( 5 )</a>
+    </div>
+    <script>
+        let abc = document.querySelectorAll('a');
+
+        abc.forEach(a => {
+            a.addEventListener('click', function () {
+                abc.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+            });
+        });
+    </script>
+</body>
+
+</html>
